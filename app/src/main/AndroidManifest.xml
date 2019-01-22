@@ -35,7 +35,8 @@
         <activity
             android:name=".mvp.view.login.LoginActivity"
             android:label="@string/title_activity_login" />
-        <activity android:name=".mvp.view.topics.TopicsActivity"></activity>
+        <activity android:name=".mvp.view.topics.TopicsActivity" />
+        <activity android:name=".mvp.view.user.HomeActivity"/>
     </application>
 
 </manifest>

@@ -6,6 +6,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import com.wenjie.mvp.view.login.LoginActivity;
 import com.wenjie.mvp.view.topics.TopicsActivity;
+import com.wenjie.mvp.view.user.HomeActivity;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -21,6 +22,6 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void toActivity2(View view){
-        startActivity(new Intent(this , TopicsActivity.class));
+        startActivity(new Intent(this , HomeActivity.class));
     }
 }
