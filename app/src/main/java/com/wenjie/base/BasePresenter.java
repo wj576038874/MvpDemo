@@ -51,7 +51,11 @@ public class BasePresenter<V extends BaseView> {
                     .subscribe(new Consumer<T>() {
                         @Override
                         public void accept(T t) {
-                            requestCallback.onSuccess(t);
+                            if (t != null){
+                                requestCallback.onSuccess(t);
+                            }else {
+                                requestCallback.onFailure("response is null");
+                            }
 //                            BaseResp baseResp = (BaseResp) t;
 //                            switch (baseResp.getCode()) {
 //                                case "00000":
