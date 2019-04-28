@@ -1,5 +1,6 @@
 package com.wenjie.api;
 
+import com.wenjie.base.BaseResponse;
 import com.wenjie.entity.New;
 import com.wenjie.entity.Token;
 import com.wenjie.entity.Topic;
@@ -20,6 +21,8 @@ import retrofit2.http.POST;
  * Description:
  */
 public interface UserService {
+
+
     /**
      * 获取 Token (一般在登录时调用)
      *
@@ -47,4 +50,29 @@ public interface UserService {
     @GET("users/me.json")
     Observable<Response<UserDetail>> getMe();
 
+
+    /********************************************************************************************/
+
+    @POST("https://www.diycode.cc/oauth/token")
+    @FormUrlEncoded
+    Observable<BaseResponse<Token>> getToken2(
+            @Field("client_id") String client_id, @Field("client_secret") String client_secret,
+            @Field("grant_type") String grant_type, @Field("username") String username,
+            @Field("password") String password);
+
+    @GET("users/me.json")
+    Observable<BaseResponse<UserDetail>> getMe2();
+
+
+    /********************************************************************************************/
+
+    @POST("https://www.diycode.cc/oauth/token")
+    @FormUrlEncoded
+    Observable<Token> getToken3(
+            @Field("client_id") String client_id, @Field("client_secret") String client_secret,
+            @Field("grant_type") String grant_type, @Field("username") String username,
+            @Field("password") String password);
+
+    @GET("users/me.json")
+    Observable<UserDetail> getMe3();
 }

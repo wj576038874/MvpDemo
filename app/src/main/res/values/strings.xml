@@ -27,4 +27,14 @@
     <string name="action_settings">Settings</string>
     <string name="pf">评分：</string>
     <string name="imageview_content_description">content_description</string>
+
+    <string name="response_data"><![CDATA[登录 Observable<Response<Token>>]]></string>
+    <string name="response_data2"><![CDATA[获取用户信息 Observable<Response<UserDetail>>]]></string>
+
+    <string name="baseresponse_data"><![CDATA[登录 Observable<BaseResponse<Token>>]]></string>
+    <string name="baseresponse_data2"><![CDATA[获取用户信息 Observable<BaseResponse<UserDetail>>]]></string>
+
+    <string name="data"><![CDATA[登录 Observable<Token>]]></string>
+    <string name="data2"><![CDATA[获取用户信息 Observable<UserDetail>]]></string>
+
 </resources>

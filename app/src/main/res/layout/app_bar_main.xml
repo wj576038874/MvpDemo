@@ -80,6 +80,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="bottom"
         android:background="?android:attr/windowBackground"
+        app:labelVisibilityMode="labeled"
         app:itemIconTint="@color/bnv_item_color"
         app:itemTextColor="@color/bnv_item_color"
         app:layout_behavior="@string/scale_down_show_behavior"

@@ -1,6 +1,7 @@
 package com.wenjie.mvp.view.login;
 
 import com.wenjie.base.BasePresenter;
+import com.wenjie.base.BaseResponse;
 import com.wenjie.base.BaseView;
 import com.wenjie.base.BaseModel;
 import com.wenjie.entity.Token;
@@ -39,6 +40,19 @@ public interface LoginContract {
         public abstract void login(String username , String password);
 
         public abstract void getMe(String username , String password);
+
+
+        public abstract void login2(String username , String password);
+
+        public abstract void getMe2(String username , String password);
+
+
+        public abstract void login3(String username , String password);
+
+        public abstract void getMe3(String username , String password);
+
+
+
     }
 
     interface Model extends BaseModel {
@@ -51,6 +65,14 @@ public interface LoginContract {
          * 获取用户信息，用户登录成之后获取到token 然后拿到token再用token去获取用户信息
          */
         Observable<Response<UserDetail>> getMe(String client_id, String client_secret, String grant_type, String username, String password);
+
+
+        Observable<BaseResponse<Token>> login2(String client_id, String client_secret, String grant_type, String username, String password);
+        Observable<BaseResponse<UserDetail>> getMe2(String client_id, String client_secret, String grant_type, String username, String password);
+
+        Observable<Token> login3(String client_id, String client_secret, String grant_type, String username, String password);
+        Observable<UserDetail> getMe3(String client_id, String client_secret, String grant_type, String username, String password);
+
     }
 
 }
