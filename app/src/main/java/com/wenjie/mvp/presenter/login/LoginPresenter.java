@@ -37,7 +37,6 @@ public class LoginPresenter extends LoginContract.Presenter {
 
     @Override
     public void login(String username, String password) {
-        if (mView == null) return;
         if (TextUtils.isEmpty(username) || TextUtils.isEmpty(password)) {
             mView.showMsg("用户名或密码不能为空");
             return;
@@ -68,7 +67,6 @@ public class LoginPresenter extends LoginContract.Presenter {
      */
     @Override
     public void getMe(String username, String password) {
-        if (mView == null) return;
         if (TextUtils.isEmpty(username) || TextUtils.isEmpty(password)) {
             mView.showMsg("用户名或密码不能为空");
             return;
@@ -101,7 +99,6 @@ public class LoginPresenter extends LoginContract.Presenter {
 
     @Override
     public void login2(String username, String password) {
-        if (mView == null) return;
         if (TextUtils.isEmpty(username) || TextUtils.isEmpty(password)) {
             mView.showMsg("用户名或密码不能为空");
             return;
@@ -126,7 +123,6 @@ public class LoginPresenter extends LoginContract.Presenter {
 
     @Override
     public void getMe2(String username, String password) {
-        if (mView == null) return;
         if (TextUtils.isEmpty(username) || TextUtils.isEmpty(password)) {
             mView.showMsg("用户名或密码不能为空");
             return;
@@ -153,7 +149,6 @@ public class LoginPresenter extends LoginContract.Presenter {
 
     @Override
     public void login3(String username, String password) {
-        if (mView == null) return;
         if (TextUtils.isEmpty(username) || TextUtils.isEmpty(password)) {
             mView.showMsg("用户名或密码不能为空");
             return;
@@ -178,7 +173,6 @@ public class LoginPresenter extends LoginContract.Presenter {
 
     @Override
     public void getMe3(String username, String password) {
-        if (mView == null) return;
         if (TextUtils.isEmpty(username) || TextUtils.isEmpty(password)) {
             mView.showMsg("用户名或密码不能为空");
             return;
