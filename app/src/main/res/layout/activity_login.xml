@@ -126,6 +126,16 @@
                 android:text="@string/data2"
                 android:textStyle="bold" />
 
+            <Button
+                android:id="@+id/button"
+                style="?android:textAppearanceSmall"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:textAllCaps="false"
+                android:text="新闻"
+                android:textStyle="bold" />
+
 
             <TextView
                 android:id="@+id/result"

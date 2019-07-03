@@ -54,11 +54,12 @@ public class BasePresenter<V extends BaseView> {
     /**
      * Retrofit的Response包裹
      * Observable<T> observable  可以再加一层包裹变为Observable<Response<T>> observable这样回调中就无需咋强转成Response
+     *
      * @see #subscribe_1(Observable, ResponseRequestCallback)
-     *
-     *  RequestCallback<T> requestCallback 可以再加一层包裹变为RequestCallback<Response<T>> requestCallback
+     * <p>
+     * RequestCallback<T> requestCallback 可以再加一层包裹变为RequestCallback<Response<T>> requestCallback
      * @see #subscribe_2(Observable, RequestCallback)
-     *
+     * <p>
      * 一般情况 要么都包裹要么都不包裹
      */
     protected <T> void subscribe(final Observable<T> observable, final RequestCallback<T> requestCallback) {
@@ -72,10 +73,14 @@ public class BasePresenter<V extends BaseView> {
                             //这里的T 是Response<数据>
                             if (t != null) {
                                 Response response = (Response) t;
-                                if (response.isSuccessful() && response.body() != null) {
-                                    requestCallback.onSuccess(t);
+                                if (response.isSuccessful()) {
+                                    if (response.body() != null) {
+                                        requestCallback.onSuccess(t);
+                                    } else {
+                                        requestCallback.onFailure("response is null");
+                                    }
                                 } else {
-                                    requestCallback.onFailure("response is null");
+                                    requestCallback.onFailure("请求出错了" + response.message() + "，错误代码" + response.code());
                                 }
                             } else {
                                 requestCallback.onFailure("response is null");
@@ -226,11 +231,12 @@ public class BasePresenter<V extends BaseView> {
     /**
      * BaseResponse包裹
      * Observable<T> observable  可以再加一层包裹变为Observable<BaseResponse<T>> observable这样回调中就无需咋强转成Response
+     *
      * @see #subscribe2_1(Observable, BaseResponseRequestCallback)
-     *
+     * <p>
      * RequestCallback<T> requestCallback 可以再加一层包裹变为RequestCallback<BaseResponse<T>> requestCallback
-     *@see #subscribe2_2(Observable, RequestCallback)
-     *
+     * @see #subscribe2_2(Observable, RequestCallback)
+     * <p>
      * 一般情况 要么都包裹要么都不包裹
      */
     protected <T> void subscribe2(final Observable<T> observable, final RequestCallback<T> requestCallback) {

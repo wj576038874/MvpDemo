@@ -1,5 +1,6 @@
 package com.wenjie.mvp.view.login;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -33,6 +34,14 @@ public class LoginActivity extends BaseMvpActivity<LoginContract.View, LoginCont
         Button mEmailSignInButton4 = findViewById(R.id.email_sign_in_button4);
         Button mEmailSignInButton5 = findViewById(R.id.email_sign_in_button5);
         Button mEmailSignInButton6 = findViewById(R.id.email_sign_in_button6);
+        Button button = findViewById(R.id.button);
+
+        button.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(LoginActivity.this , NewsActivity.class));
+            }
+        });
 
         mEmailSignInButton.setOnClickListener(new OnClickListener() {
             @Override
